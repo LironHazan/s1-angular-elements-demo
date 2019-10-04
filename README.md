@@ -1,4 +1,24 @@
-# S1AngularElementsDemo
+# SentinelOne - Angular Elements demo
+
+Let's create a silly component that we can use anywhere!
+
+- Add a silly-button module, component and service.
+- export the module and component
+- install @angular/elements 
+- npm install @webcomponents/custom-elements --save
+
+Pack with local script:
+- run: `build:wc`
+- possible to serve by running: `npx http-server` from the "simple-dist" path.
+
+** From this point you can use the component as native custom element anywhere!
+
+Pack with ngx-build-plus:
+
+- ng add ngx-build-plus
+follow instructions: https://github.com/manfredsteyer/ngx-build-plus
+
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.0.4.
 
