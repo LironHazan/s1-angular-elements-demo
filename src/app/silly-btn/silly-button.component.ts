@@ -2,7 +2,8 @@ import {Component, Input, OnInit, ViewEncapsulation} from '@angular/core';
 import {SillyButtonService} from './silly-button.service';
 
 @Component({
-  selector: 'app-silly-button',
+  // tslint:disable-next-line:component-selector
+  selector: 'ng-silly-button',
   template:
     `<div class="silly-btn" (click)="onClick($event)">
         <div class="content">
@@ -14,7 +15,6 @@ import {SillyButtonService} from './silly-button.service';
   encapsulation: ViewEncapsulation.ShadowDom
 })
 export class SillyButtonComponent implements OnInit {
-  btnLayoutColor;
   @Input() text = 'Hell Yeahh!';
   constructor(private  sillyButtonService: SillyButtonService) { }
 
@@ -22,7 +22,7 @@ export class SillyButtonComponent implements OnInit {
     console.log('connected callback');
   }
 
-  onClick() {
+  onClick(evt) {
     this.sillyButtonService.doSomething('foo');
   }
 
