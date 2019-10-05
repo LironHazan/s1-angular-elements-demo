@@ -1,0 +1,12 @@
+.silly-btn {
+  display: flex;
+  width: fit-content;
+}
+
+.content {
+  cursor: pointer;
+  background: lightyellow;
+}
+.content:hover {
+  transform: scaleX(-1);
+}

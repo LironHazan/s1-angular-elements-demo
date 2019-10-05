@@ -1,29 +1,29 @@
-import {AfterViewInit, Component, ElementRef, Input, OnInit, ViewChild, ViewEncapsulation} from '@angular/core';
+import {Component, Input, OnInit, ViewEncapsulation} from '@angular/core';
 import {SillyButtonService} from './silly-button.service';
 
 @Component({
   selector: 'app-silly-button',
-  template: `<div #btnLayout>
-    <div> {{ text }} </div>
-    <ng-content> </ng-content>
-  </div>`,
-  styleUrls: ['./silly-button.component.scss'],
+  template:
+    `<div class="silly-btn" (click)="onClick($event)">
+        <div class="content">
+          <ng-content></ng-content>
+        </div>
+        <button class="content" mat-button> {{ text }}  </button>
+     </div>`,
+  styleUrls: ['./silly-button.component.css'],
   encapsulation: ViewEncapsulation.ShadowDom
 })
-export class SillyButtonComponent implements OnInit, AfterViewInit {
-
-  @ViewChild('btnLayout', { static: false })
-  btnLayoutElement: ElementRef;
+export class SillyButtonComponent implements OnInit {
   btnLayoutColor;
   @Input() text = 'Hell Yeahh!';
   constructor(private  sillyButtonService: SillyButtonService) { }
 
   ngOnInit() {
-    this.btnLayoutColor = this.sillyButtonService.ghostifyText();
+    console.log('connected callback');
   }
 
-  ngAfterViewInit(): void {
-    this.btnLayoutElement.nativeElement.style.backgroundColor = this.btnLayoutColor ;
+  onClick() {
+    this.sillyButtonService.doSomething('foo');
   }
 
 }

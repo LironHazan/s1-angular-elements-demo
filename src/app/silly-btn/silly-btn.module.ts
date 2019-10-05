@@ -2,6 +2,7 @@ import {Injector, NgModule} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {createCustomElement} from '@angular/elements';
 import {SillyButtonComponent} from './silly-btn/silly-button.component';
+import {MatButtonModule} from '@angular/material';
 
 @NgModule({
   declarations: [SillyButtonComponent],
@@ -9,7 +10,8 @@ import {SillyButtonComponent} from './silly-btn/silly-button.component';
     SillyButtonComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    MatButtonModule
   ],
   entryComponents: [SillyButtonComponent]
 })
